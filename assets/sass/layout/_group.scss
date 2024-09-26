@@ -1,0 +1,103 @@
+@use "../utilities" as *;
+
+/**----------------------------------------
+START: Theme Group CSS
+----------------------------------------*/
+.eulogai-group {
+    padding-top: 161px;
+}
+.chat-inner {
+    max-width: 678px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    .chat-anim {
+        width: 100%;
+        .sec_title {
+            margin-bottom: 32px;
+        }
+        .chat_icons {
+            max-width: 28px;
+            width: 100%;
+            margin-top: 16px;
+        }
+        &.style-2 {
+            margin-top: 16px;
+            .save-btn {
+                margin-bottom: 32px;
+            }
+            .sec_title {
+                margin-bottom: 16px;
+            }
+        }
+    }
+}
+
+.cart_box {
+    padding-top: 161px;
+    padding-bottom: 56px;
+    .sec_title {
+        max-width: 500px;
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+        .title {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 40px;
+            img {
+                max-width: 47px;
+                width: 100%;
+            }
+        }
+    }
+    .cart-inner {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 20px;
+        margin-top: 40px;
+    }
+    .cart-anim {
+        margin-top: 24px;
+        .desc {
+            margin-bottom: 32px;
+        }
+        .form-group {
+            margin-bottom: 16px;
+            .form_input {
+                margin-bottom: 0;
+            } 
+        }
+    }
+}
+
+.cart-item {
+    max-width: 329px;
+    width: 100%;
+    background: var(--tj-color-common-white);
+    border: 1px solid var(--tj-color-border-2);
+    border-radius: 16px;
+    padding: 27px 16px;
+    .title {
+        display: flex;
+        gap: 8px;
+        align-items: center;
+        margin-bottom: 10px;
+        img {
+            max-width: 26px;
+            width: 100%;
+        }
+    }
+    .cart-btn {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+       font-size: 14px;
+       color: var(--tj-color-common-black);
+       font-family: var(--tj-ff-body);
+    } 
+}
+/* !END: Theme Group CSS */

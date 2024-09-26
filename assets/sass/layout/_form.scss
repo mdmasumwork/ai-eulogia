@@ -1,0 +1,47 @@
+@use "../utilities" as *;
+
+/**----------------------------------------
+START: Theme Form CSS
+----------------------------------------*/
+.form-group {
+    position: relative;
+    background: var(--tj-color-common-white);
+    border: 1px solid var(--tj-color-border-1);
+    border-radius: 24px;
+    padding: 15px 16px 15px;
+    z-index: 1;
+    .form_input {
+        margin-bottom: 16px;
+        input[type="text"] {
+            font-size: 14px;
+            font-family: var(--tj-ff-body);
+            color: var(--tj-color-common-black);
+            padding: 0px;
+            border: none;
+            width: 100%;
+            padding-right: 125px;
+            background-color: transparent;
+            &::-ms-input-placeholder {
+               color: var(--tj-color-common-black);
+            }
+            &::placeholder {
+                color: var(--tj-color-common-black);
+            }
+            &:focus {
+               outline: none;
+            }
+        }
+    }
+    .anim-btn {
+        position: absolute;
+        right: 16px;
+        top: 16px;
+    }
+}
+
+label {
+    display: block;
+    font-size: 12px;
+    color: var(--tj-color-common-black);
+}
+/* !END: Theme Form CSS */
