@@ -5,6 +5,7 @@ START: Theme Group CSS
 ----------------------------------------*/
 .eulogai-group {
     padding-top: 161px;
+    padding-bottom: 32px;
 }
 .chat-inner {
     max-width: 678px;
@@ -29,6 +30,32 @@ START: Theme Group CSS
             .sec_title {
                 margin-bottom: 16px;
             }
+        }
+        &.style-3 {
+            .save-btn {
+                margin-bottom: 56px;
+            }
+            .title {
+                margin-bottom: 16px;
+            }
+            .chat-list {
+                ul {
+                    margin: 0;
+                    padding: 0;
+                    list-style: none;
+                    li {
+                        position: relative;
+                        z-index: 1;
+                        margin-bottom: 20px;
+                        &.active {
+                            margin-bottom: 5px;
+                        }
+                    }
+                }
+            }
+        }
+        &.style-4 {
+            margin-top: 56px;
         }
     }
 }
@@ -57,7 +84,8 @@ START: Theme Group CSS
         display: flex;
         flex-wrap: wrap;
         align-items: center;
-        gap: 20px;
+        column-gap: 20px;
+        row-gap: 20px;
         margin-top: 40px;
     }
     .cart-anim {
@@ -70,6 +98,25 @@ START: Theme Group CSS
             .form_input {
                 margin-bottom: 0;
             } 
+        }
+        .cart-style-2 {
+           display: flex; 
+           flex-wrap: wrap;
+           flex-wrap: wrap;
+           align-items: center;
+           column-gap: 20px;
+           row-gap: 20px;
+           .cart-item {
+            .desc {
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                font-size: 14px;
+                color: var(--tj-color-common-black);
+                line-height: 1.7;
+                margin-bottom: 0;
+            }
+           }
         }
     }
 }
