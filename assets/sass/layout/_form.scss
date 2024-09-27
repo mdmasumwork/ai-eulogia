@@ -11,9 +11,8 @@ START: Theme Form CSS
     padding: 15px 16px 15px;
     z-index: 1;
     .form_input {
-        margin-bottom: 16px;
         input[type="text"] {
-            font-size: 14px;
+            font-size: 16px;
             font-family: var(--tj-ff-body);
             color: var(--tj-color-common-black);
             padding: 0px;
@@ -23,9 +22,11 @@ START: Theme Form CSS
             background-color: transparent;
             &::-ms-input-placeholder {
                color: var(--tj-color-common-black);
+               font-size: 16px;
             }
             &::placeholder {
                 color: var(--tj-color-common-black);
+                font-size: 16px;
             }
             &:focus {
                outline: none;

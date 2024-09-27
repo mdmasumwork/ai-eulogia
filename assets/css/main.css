@@ -52,8 +52,7 @@ START: Theme Default CSS
 * {
   margin: 0;
   padding: 0;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 /**
@@ -84,6 +83,9 @@ h6 {
   font-weight: var(--tj-fw-regular);
   line-height: 1.2;
   -webkit-transition: all 0.3s ease-in-out 0s;
+  -moz-transition: all 0.3s ease-in-out 0s;
+  -ms-transition: all 0.3s ease-in-out 0s;
+  -o-transition: all 0.3s ease-in-out 0s;
   transition: all 0.3s ease-in-out 0s;
 }
 
@@ -167,8 +169,7 @@ button:hover {
 button:focus,
 button:focus:not(:focus-visible) {
   outline: 0;
-  -webkit-box-shadow: 0 0 0;
-          box-shadow: 0 0 0;
+  box-shadow: 0 0 0;
 }
 
 .uppercase {
@@ -218,17 +219,17 @@ button:focus:not(:focus-visible) {
   font-size: var(--tj-fs-body);
   opacity: 1;
 }
+*:-moz-placeholder {
+  color: var(--tj-color-common-black);
+  font-size: var(--tj-fs-body);
+  opacity: 1;
+}
 *::-moz-placeholder {
   color: var(--tj-color-common-black);
   font-size: var(--tj-fs-body);
   opacity: 1;
 }
 *:-ms-input-placeholder {
-  color: var(--tj-color-common-black);
-  font-size: var(--tj-fs-body);
-  opacity: 1;
-}
-*::-ms-input-placeholder {
   color: var(--tj-color-common-black);
   font-size: var(--tj-fs-body);
   opacity: 1;
@@ -262,12 +263,8 @@ img {
   Buttons CSS
 */
 .anim-btn {
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
   display: inline-flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
   gap: 12px;
   font-size: 16px;
   font-weight: var(--tj-fw-bold);
@@ -286,12 +283,8 @@ img {
 }
 
 .save-btn {
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
   display: inline-flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
   gap: 8px;
   font-size: 12px;
   font-weight: var(--tj-fw-bold);
@@ -303,13 +296,15 @@ img {
   padding: 8px 16px;
   line-height: 1;
 }
+.save-btn.style-2 {
+  padding: 9px 16px;
+}
 
 /**----------------------------------------
 START: Theme Group CSS
 ----------------------------------------*/
 .eulogai-group {
-  padding-top: 161px;
-  padding-bottom: 32px;
+  padding: 161px 30px 32px;
 }
 
 .chat-inner {
@@ -317,6 +312,35 @@ START: Theme Group CSS
   width: 100%;
   margin-left: auto;
   margin-right: auto;
+}
+.chat-inner .chat-anim:nth-child(2) .sec_title {
+  margin-top: 32px;
+  margin-bottom: 16px;
+}
+.chat-inner .chat-anim:nth-child(2) .cart_box .sec_title {
+  margin-bottom: 56px;
+}
+.chat-inner .chat-anim:nth-child(3) .save-btn {
+  margin-bottom: 56px;
+}
+.chat-inner .chat-anim:nth-child(3) .sec_title {
+  margin-bottom: 16px;
+}
+.chat-inner .chat-anim:nth-child(3) .form-group {
+  padding: 25px 16px;
+}
+.chat-inner .chat-anim:nth-child(4) .form-group {
+  margin-bottom: 16px;
+  position: relative;
+  z-index: 1;
+}
+.chat-inner .chat-anim:nth-child(4) .form-group img {
+  position: absolute;
+  bottom: 16px;
+  right: 16px;
+}
+.chat-inner .chat-anim:nth-child(5) .save-btn {
+  margin-bottom: 56px;
 }
 
 .cart-inner-two {
@@ -343,11 +367,14 @@ START: Theme Group CSS
 .chat-anim .chat-content {
   margin-bottom: 32px;
 }
-.chat-anim .chat-content .desc p {
+.chat-anim .chat-content .desc p:first-child {
   margin-bottom: 20px;
 }
 .chat-anim .chat-content .desc p:last-child {
-  margin-bottom: 0;
+  margin-top: 20px;
+}
+.chat-anim .chat-content .desc ul {
+  padding-left: 30px;
 }
 .chat-anim .chat-content .chat-list {
   margin-bottom: 20px;
@@ -357,11 +384,15 @@ START: Theme Group CSS
   margin: 0;
   padding: 0;
 }
+.chat-anim .form-group.group-2 .form_input:nth-child(1) {
+  margin-bottom: 16px;
+}
 .chat-anim textarea {
   width: 100%;
   min-height: 110px;
   border: none;
   resize: none;
+  font-size: 16px;
   font-family: var(--tj-ff-body);
   color: var(--tj-color-common-black);
   line-height: 1.7;
@@ -376,41 +407,30 @@ START: Theme Group CSS
   border: 1px solid var(--tj-color-border-2);
   border-radius: 16px;
   padding: 31px 16px;
+  margin-top: 32px;
 }
 .chat-anim .document-box .title {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   gap: 8px;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
   margin-bottom: 10px;
 }
-.chat-anim .document-box button {
-  display: -webkit-box;
-  display: -ms-flexbox;
+.chat-anim .document-box span {
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
   gap: 8px;
   font-size: 14px;
   font-family: var(--tj-ff-body);
   color: var(--tj-color-common-black);
 }
-.chat-anim .document-box button img {
+.chat-anim .document-box span img {
   max-width: 11px;
   width: 100%;
 }
 
 .chat-anim-two .top-header span {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
   gap: 8px;
   margin-bottom: 10px;
 }
@@ -428,23 +448,19 @@ START: Theme Group CSS
   margin-bottom: 0;
 }
 .chat-anim-two .bottom-text {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 10px;
 }
 .chat-anim-two .bottom-text span {
   color: var(--tj-color-grey-1);
+  font-size: 12px;
 }
 
 .cart_box {
   padding-top: 161px;
-  padding-bottom: 56px;
+  padding-bottom: 16px;
 }
 .cart_box .sec_title {
   max-width: 500px;
@@ -454,12 +470,8 @@ START: Theme Group CSS
   text-align: center;
 }
 .cart_box .sec_title .title {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
   gap: 8px;
   font-size: 40px;
 }
@@ -468,26 +480,19 @@ START: Theme Group CSS
   width: 100%;
 }
 .cart_box .cart-inner {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-column-gap: 20px;
-     -moz-column-gap: 20px;
-          column-gap: 20px;
+  flex-wrap: wrap;
+  align-items: center;
+  column-gap: 20px;
   row-gap: 20px;
-  margin-top: 40px;
+  margin-bottom: 24px;
 }
 
-.cart-anim {
-  margin-top: 24px;
-}
 .cart-anim .desc {
   margin-bottom: 32px;
+}
+.cart-anim .save-btn {
+  margin-bottom: 56px;
 }
 .cart-anim .form-group {
   margin-bottom: 16px;
@@ -496,32 +501,30 @@ START: Theme Group CSS
   margin-bottom: 0;
 }
 .cart-anim .cart-style-2 {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
   flex-wrap: wrap;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-column-gap: 20px;
-     -moz-column-gap: 20px;
-          column-gap: 20px;
+  flex-wrap: wrap;
+  align-items: center;
+  column-gap: 20px;
   row-gap: 20px;
 }
 .cart-anim .cart-style-2 .cart-item .desc {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
   gap: 8px;
   font-size: 14px;
   color: var(--tj-color-common-black);
   line-height: 1.7;
   margin-bottom: 0;
+}
+.cart-anim .cart-style-2 .cart-item.active {
+  background: var(--tj-color-theme-primary);
+}
+.cart-anim .cart-style-2 .cart-item.active .desc {
+  color: var(--tj-color-common-white);
+}
+.cart-anim .cart-style-2 .cart-item.active .img-1 {
+  filter: brightness(0) invert(1);
 }
 
 .cart-item {
@@ -530,16 +533,12 @@ START: Theme Group CSS
   background: var(--tj-color-common-white);
   border: 1px solid var(--tj-color-border-2);
   border-radius: 16px;
-  padding: 27px 16px;
+  padding: 24px 16px;
 }
 .cart-item .title {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   gap: 8px;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
   margin-bottom: 10px;
 }
 .cart-item .title img {
@@ -547,16 +546,24 @@ START: Theme Group CSS
   width: 100%;
 }
 .cart-item .cart-btn {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
   gap: 8px;
   font-size: 14px;
   color: var(--tj-color-common-black);
   font-family: var(--tj-ff-body);
+}
+.cart-item.active {
+  background: var(--tj-color-theme-primary);
+}
+.cart-item.active .title {
+  color: var(--tj-color-common-white);
+}
+.cart-item.active .cart-btn {
+  color: var(--tj-color-common-white);
+}
+.cart-item.active .cart-btn img {
+  filter: brightness(0) invert(1);
 }
 
 /* !END: Theme Group CSS */
@@ -579,11 +586,8 @@ START: Theme Form CSS
   padding: 15px 16px 15px;
   z-index: 1;
 }
-.form-group .form_input {
-  margin-bottom: 16px;
-}
 .form-group .form_input input[type=text] {
-  font-size: 14px;
+  font-size: 16px;
   font-family: var(--tj-ff-body);
   color: var(--tj-color-common-black);
   padding: 0px;
@@ -594,18 +598,11 @@ START: Theme Form CSS
 }
 .form-group .form_input input[type=text]::-ms-input-placeholder {
   color: var(--tj-color-common-black);
-}
-.form-group .form_input input[type=text]::-webkit-input-placeholder {
-  color: var(--tj-color-common-black);
-}
-.form-group .form_input input[type=text]::-moz-placeholder {
-  color: var(--tj-color-common-black);
-}
-.form-group .form_input input[type=text]:-ms-input-placeholder {
-  color: var(--tj-color-common-black);
+  font-size: 16px;
 }
 .form-group .form_input input[type=text]::placeholder {
   color: var(--tj-color-common-black);
+  font-size: 16px;
 }
 .form-group .form_input input[type=text]:focus {
   outline: none;
@@ -622,4 +619,4 @@ label {
   color: var(--tj-color-common-black);
 }
 
-/* !END: Theme Form CSS *//*# sourceMappingURL=main.css.map */
+/* !END: Theme Form CSS */
