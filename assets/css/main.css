@@ -304,6 +304,11 @@ img {
   line-height: 1;
 }
 
+button:disabled,
+.save-btn:disabled {
+  cursor: default;
+}
+
 .download-btn {
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
@@ -326,41 +331,49 @@ img {
 /**----------------------------------------
 START: Theme Group CSS
 ----------------------------------------*/
-.eulogai-group {
-  padding: 161px 30px 32px;
+.eulogai-section {
+  padding: 0 30px;
+  height: 100vh;
+  overflow: hidden;
 }
-
-.chat-inner {
+@media only screen and (min-width: 576px) and (max-width: 767px), (max-width: 575px) {
+  .eulogai-section {
+    padding: 0 20px;
+  }
+}
+.eulogai-section .chat-wrapper {
+  height: 100%;
+}
+.eulogai-section .chat-wrapper .chat-inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: relative;
   max-width: 678px;
   width: 100%;
   margin-left: auto;
   margin-right: auto;
+  height: 100%;
 }
-.chat-inner .chat-anim:nth-child(2) .sec_title {
-  margin-top: 32px;
-  margin-bottom: 16px;
+.eulogai-section .chat-wrapper .chat-inner .intro {
+  opacity: 0;
+  -webkit-transform: translateY(40%);
+      -ms-transform: translateY(40%);
+          transform: translateY(40%);
+  -webkit-transition: opacity 0.5s ease, -webkit-transform 1s ease;
+  transition: opacity 0.5s ease, -webkit-transform 1s ease;
+  transition: opacity 0.5s ease, transform 1s ease;
+  transition: opacity 0.5s ease, transform 1s ease, -webkit-transform 1s ease;
 }
-.chat-inner .chat-anim:nth-child(2) .cart_box .sec_title {
-  margin-bottom: 56px;
-}
-.chat-inner .chat-anim:nth-child(3) .save-btn {
-  margin-bottom: 56px;
-}
-.chat-inner .chat-anim:nth-child(3) .sec_title {
-  margin-bottom: 16px;
-}
-.chat-inner .chat-anim:nth-child(4) .form-group {
-  margin-bottom: 16px;
-  position: relative;
-  z-index: 1;
-}
-.chat-inner .chat-anim:nth-child(4) .form-group img {
-  position: absolute;
-  bottom: 16px;
-  right: 16px;
-}
-.chat-inner .chat-anim:nth-child(5) .save-btn {
-  margin-bottom: 56px;
+.eulogai-section .chat-wrapper .chat-inner .intro.show {
+  opacity: 1;
+  -webkit-transform: translateY(0);
+      -ms-transform: translateY(0);
+          transform: translateY(0);
 }
 
 .document-wrap {
@@ -417,14 +430,27 @@ START: Theme Group CSS
 
 .chat-anim {
   width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
+  gap: 16px;
 }
 .chat-anim .sec_title {
-  margin-bottom: 32px;
+  margin-bottom: 16px;
+}
+.chat-anim .quick_note {
+  margin-top: 16px;
 }
 .chat-anim .chat_icons {
   max-width: 28px;
   width: 100%;
-  margin-top: 16px;
 }
 .chat-anim .chat-content {
   margin-bottom: 32px;
@@ -648,6 +674,7 @@ START: Theme Section Title CSS
 START: Theme Form CSS
 ----------------------------------------*/
 .form-group {
+  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -668,9 +695,7 @@ START: Theme Form CSS
   padding: 15px 16px 15px;
   min-height: 76px;
   z-index: 1;
-}
-.form-group .form_input:not(:last-child) {
-  margin-bottom: 16px;
+  row-gap: 16px;
 }
 .form-group .anim-btn {
   position: absolute;

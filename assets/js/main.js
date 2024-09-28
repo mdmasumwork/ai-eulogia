@@ -1,51 +1,54 @@
-/***************************************************
-==================== JS INDEX ======================
-****************************************************
-Mobile Menu Js
-
-
-****************************************************/
-
 (function ($) {
-   "use strict";
+	"use strict";
 
-   ////////////////////////////////////////////////////
-   // Mobile Menu Js
-   $("#mobile-menu").meanmenu({
-      meanMenuContainer: ".mobile-menu",
-      meanScreenWidth: "991",
-      meanExpand: ['<i class="fal fa-plus"></i>'],
-   });
+	// Function to center the active block
+	function centerActiveBlock() {
+		const $activeBlock = $(".chat-anim.active");
+		const containerHeight = $(".chat-inner").height();
+		console.log("containerHeight: " + containerHeight);
+		const blockHeight = $activeBlock.outerHeight();
+		console.log("blockHeight: " + blockHeight);
 
-   // Header Middle Logo
-   var minWidth = window.matchMedia("(min-width: 992px)");
-   if ($(".move_logo_wrap").length > 0 && minWidth) {
-      // Function to dynamically move .header-logo to the middle of top-level li elements
-      function moveLogoToMiddle() {
-         var container = document.querySelector(".move_logo_wrap");
-         var mainMenu = container.querySelector(".mainmenu");
-         var siteLogo = container.querySelector(".header-logo");
-         var listItems = Array.from(mainMenu.querySelectorAll("li"));
+		// Calculate the top position to center the block
+		const offset = containerHeight / 2 - blockHeight / 1.5;
+		console.log("offset: " + offset);
 
-         // Filter out child li elements
-         var topLevelListItems = listItems.filter(function (item) {
-            return item.parentElement === mainMenu.querySelector("ul");
-         });
+		console.log("Top: " + $activeBlock.position().top);
+		const newTop = offset - $activeBlock.position().top;
+		console.log("newTop: " + newTop);
 
-         var middleIndex = Math.floor(topLevelListItems.length / 2);
+		// Animate the container to move the active block to the center
+		$(".chat-inner").css("top", newTop);
+	}
 
-         if (topLevelListItems.length > 0) {
-            // Calculate the middle index
+	// Center the active block on load
+	$(window).on("load", function () {
+		$(".intro").addClass("show"); // Add 'show' class only to the first chat-anim block
+		$(".chat-anim:first").addClass("active"); // Add 'show' class only to the first chat-anim block
+		centerActiveBlock(); // Center the active block after showing
 
-            // Insert the siteLogo in the middle of top-level list items
-            topLevelListItems[middleIndex].insertAdjacentElement("beforebegin", siteLogo);
-         }
-      }
+		let clickCount = 0; // Track the number of clicks
 
-      // windowOn.on("load resize", function () {
-      if (minWidth) {
-         // Call the function when the document is fully loaded
-         window.addEventListener("load", moveLogoToMiddle);
-      }
-   }
+		$(".anim-btn").on("click", function () {
+			clickCount++; // Increment click count
+
+			if (clickCount === 1) {
+				// First click: enable the first input and show the second input
+				$("#name").val("Tanvir").prop("disabled", false); // Enable the input
+				$(".form_input").last().slideDown(300); // Slide down the second input
+			} else if (clickCount === 2) {
+				// Second click: show the save button
+				$(".save-btn").show(); // Show save button and enable it
+
+				// Show the quick note with an upward movement
+				// $(this).parents(".chat-anim").next().slideDown(300);
+				$(this)
+					.parents(".chat-anim")
+					.removeClass("active")
+					.next()
+					.addClass("active");
+				centerActiveBlock(); // Center the active block after showing
+			}
+		});
+	});
 })(jQuery);
