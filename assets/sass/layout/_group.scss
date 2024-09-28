@@ -31,9 +31,6 @@ START: Theme Group CSS
             .sec_title {
                 margin-bottom: 16px;
             }
-            .form-group {
-                padding: 25px 16px;
-            }
         }
         &:nth-child(4) {
             .form-group {
@@ -55,7 +52,7 @@ START: Theme Group CSS
     }
 }
 
-.cart-inner-two {
+.document-wrap {
     max-width: 680px;
     width: 100%;
     margin-left: auto;
@@ -63,6 +60,40 @@ START: Theme Group CSS
     border: 1px solid var(--tj-color-border-2);
     border-radius: 16px;
     padding: 24px 16px;
+    .document-top {
+        margin-bottom: 10px;
+        span {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .title {
+            margin-bottom: 10px;
+        }
+        .sub-title {
+            font-size: 14px;
+            color: var(--tj-color-common-black);
+        }
+    }
+    .document-desc {
+        p {
+            margin-bottom: 25px;
+            &:last-child {
+                margin-bottom: 0;
+            }
+        } 
+    }
+    .document-button {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 10px;
+        span {
+            display: block;
+            color: var(--tj-color-grey-1);
+            font-size: 12px;
+        }
+    }
 }
 
 .chat-anim {
@@ -99,15 +130,6 @@ START: Theme Group CSS
             }
         }
     }
-    .form-group {
-        &.group-2 {
-            .form_input {
-                &:nth-child(1) {
-                    margin-bottom: 16px;
-                }
-            }
-        } 
-    }
     textarea {
         width: 100%;
         min-height: 110px;
@@ -121,7 +143,7 @@ START: Theme Group CSS
             outline: none;
         }
     }
-    .document-box {
+    .document-btn {
         max-width: 330px;
         width: 100%;
         background: var(--tj-color-common-white);
@@ -146,44 +168,6 @@ START: Theme Group CSS
                 max-width: 11px;
                 width: 100%;
             }
-        }
-    }
-}
-
-.chat-anim-two {
-    .top-header {
-        span {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            margin-bottom: 10px;
-        }
-        .title {
-            margin-bottom: 10px;
-        }
-        .sub-title {
-            font-size: 14px;
-            color: var(--tj-color-common-black);
-        }
-    }
-    .anim-text {
-        .desc {
-            p {
-                margin-bottom: 25px;
-                &:last-child {
-                    margin-bottom: 0;
-                }
-            }
-        }
-    }
-    .bottom-text {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        margin-top: 10px;
-        span {
-            color: var(--tj-color-grey-1);
-            font-size: 12px;
         }
     }
 }

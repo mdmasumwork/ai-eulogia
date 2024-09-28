@@ -37,8 +37,20 @@
   border: 1px solid var(--tj-color-grey-1);
   padding: 8px 16px;
   line-height: 1;
-  &.style-2 {
-    padding: 9px 16px;
-  }
+}
+
+.download-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  font-weight: var(--tj-fw-bold);
+  color: var(--tj-color-grey-1);
+  font-family: var(--tj-ff-body);
+  background-color: transparent;
+  border-radius: 400px;
+  border: 1px solid var(--tj-color-grey-1);
+  padding: 9px 16px;
+  line-height: 1;
 }
 
