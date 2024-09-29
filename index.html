@@ -25,6 +25,7 @@
          <div class="chat-wrapper">
             <div class="chat-inner">
 
+               <!-- intro -->
                <div class="chat-anim intro">
                   <div class="sec_title">
                      <h1 class="title">Hello, I’m Eulogai</h1>
@@ -56,6 +57,7 @@
                   <img class="chat_icons" src="assets/images/icons/sec_icons.png" alt="Icons">
                </div>
 
+               <!-- quick note -->
                <div class="chat-anim quick_note " style="display: none;">
                   <div class="sec_title">
                      <h1 class="title">Just a quick note</h1>
@@ -72,6 +74,7 @@
                   <img class="chat_icons" src="assets/images/icons/sec_icons.png" alt="Icons">
                </div>
 
+               <!-- what i do -->
                <div class="chat-anim what-i-do" style="display: none;">
                   <div class="sec_title">
                      <h1 class="title">
@@ -133,6 +136,7 @@
                   </button>
                </div>
 
+               <!-- passed -->
                <div class="chat-anim passed" style="display: none;">
                   <div class="desc">
                      <p>I’m sorry for your loss, and I’d be honored to help you write a meaningful eulogy. To make
@@ -147,8 +151,7 @@
                      </button>
                      <div class="form_input passedName">
                         <label for="passedName">Of course...</label>
-                        <input type="text" name="passedName" id="passedName" placeholder="Their full name" value=""
-                           disabled>
+                        <input type="text" name="passedName" id="passedName" placeholder="Their full name" value="">
                      </div>
                   </div>
 
@@ -159,26 +162,182 @@
                   </button>
                </div>
 
+               <!-- relationship -->
                <div class="chat-anim relation" style="display: none;">
                   <div class="desc">
                      <p>Thank you, and what was your relationship to Chris?</p>
                   </div>
-                  <div class="form-group">
-                     <button class="anim-btn" type="submit">Send <img src="assets/images/icons/arrow-1.svg"
+                  <div class="form-group relation">
+                     <button class="anim-btn relationBtn" type="submit">Send <img src="assets/images/icons/arrow-1.svg"
                            alt="Icons"></button>
-                     <div class="form_input">
-                        <label for="nameSix">Sure thing,</label>
-                        <input type="text" name="nameSix" id="nameSix" placeholder="Chris was my.." required="">
+                     <div class="form_input relation">
+                        <label for="relation">Sure thing,</label>
+                        <input type="text" name="relation" id="realtion" placeholder="Chris was my.." value="">
                      </div>
                   </div>
 
                   <img class="chat_icons" src="assets/images/icons/sec_icons.png" alt="Icons">
+
+                  <button class="save-btn" type="submit" style="display: none;" disabled>
+                     Saved <img src="assets/images/icons/icons-1.svg" alt="Icons">
+                  </button>
+               </div>
+
+               <!-- story -->
+               <div class="chat-anim story" style="display: none;">
+                  <div class="desc">
+                     <p>Thank you for sharing that, and I'm truly sorry for the loss of your close friend, Chris.
+                        To help me write something that truly honours him, could you tell me the tone of voice
+                        that would that would be best?</p>
+                  </div>
+
+                  <div class="cart-inner">
+                     <button class="cart-item style-2">
+                        <h3 class="title">
+                           <img src="assets/images/icons/warm.svg" alt="Icons">
+                           Warm & Compassionate
+                        </h3>
+                        <div class="desc">
+                           <p>Gentle and heartfelt, perfect for creatinga comforting, personal tone.</p>
+                           <img class="arrow" src="assets/images/icons/arrow-3.svg" alt="Icons">
+                        </div>
+                     </button>
+                     <button class="cart-item style-2">
+                        <h3 class="title">
+                           <img src="assets/images/icons/formal.svg" alt="Icons">
+                           Formal & Respectful
+                        </h3>
+                        <div class="desc">
+                           <p>Professional and traditional, ideal for thoseseeking a more dignified tone.</p>
+                           <img class="arrow" src="assets/images/icons/arrow-3.svg" alt="Icons">
+                        </div>
+                     </button>
+                     <button class="cart-item style-2">
+                        <h3 class="title">
+                           <img src="assets/images/icons/poetic.svg" alt="Icons">
+                           Poetic & Reflective
+                        </h3>
+                        <div class="desc">
+                           <p>Elegant and thoughtful, focusing ondeep emotions for a more artistic tribute.</p>
+                           <img class="arrow" src="assets/images/icons/arrow-3.svg" alt="Icons">
+                        </div>
+                     </button>
+                     <button class="cart-item style-2">
+                        <h3 class="title">
+                           <img src="assets/images/icons/optimistic.svg" alt="Icons">
+                           Optimistic & Uplifting
+                        </h3>
+                        <div class="desc">
+                           <p>Positive and hopeful, highlighting the joyand achievements of a life well-lived.</p>
+                           <img class="arrow" src="assets/images/icons/arrow-3.svg" alt="Icons">
+                        </div>
+                     </button>
+                  </div>
+
+                  <img class="chat_icons" src="assets/images/icons/sec_icons.png" alt="Icons">
+
+                  <button class="save-btn" type="submit" style="display: none;" disabled>
+                     Saved <img src="assets/images/icons/icons-1.svg" alt="Icons">
+                  </button>
+               </div>
+
+               <!-- confirmation -->
+               <div class="chat-anim confirmation" style="display: none;">
+                  <div class="sec_title">
+                     <h1 class="title">Thank you for confirming that.</h1>
+                  </div>
+                  <div class="chat-content">
+                     <div class="desc">
+                        <p>To help me write something meaningful, could you please tell me a bit more about Chris?</p>
+                        <p>Some things you might consider sharing are:</p>
+                        <ul>
+                           <li>What made him a great friend to you?</li>
+                           <li>Are there any specific memories, stories or moments that stand out when you think about
+                              him?</li>
+                           <li>How would you describe his personality or the way he impacted those around him?</li>
+                        </ul>
+                        <p>These details will help me create a eulogy that feels deeply personal and heartfelt. Take you
+                           time.</p>
+                     </div>
+                  </div>
+
+                  <div class="form-group confirmation">
+                     <button class="anim-btn confirmationBtn" type="submit">Send <img
+                           src="assets/images/icons/arrow-1.svg" alt="Icons"></button>
+                     <div class="form_input ">
+                        <textarea name="confirmation" id="confirmation" onkeyup="textAreaAdjust(this)"
+                           style="overflow:hidden" placeholder="Reply to Eulogia..."></textarea>
+                     </div>
+                  </div>
+
+                  <img class="chat_icons" src="assets/images/icons/sec_icons.png" alt="Icons">
+
+                  <button class="save-btn" type="submit" style="display: none;" disabled>
+                     Saved <img src="assets/images/icons/icons-1.svg" alt="Icons">
+                  </button>
+               </div>
+
+               <!-- sharing -->
+               <div class="chat-anim sharing" style="display: none;">
+                  <div class="desc">
+                     <p>Thank you for sharing those beautiful details about Chris. Here's an uplifting and optimistic
+                        eulogy that reflects the friendship you shared and his vibrant personality:</p>
+                  </div>
+
+                  <button class="document-btn finalBtn">
+                     <h3 class="title"><img src="assets/images/icons/document.svg" alt="Icons">Eulogy for Chris</h3>
+                     <span>Click to open document <img src="assets/images/icons/arrow-3.svg" alt="Icons"></span>
+                  </button>
+
+                  <img class="chat_icons" src="assets/images/icons/sec_icons.png" alt="Icons">
+               </div>
+            </div>
+
+            <div class="document-wrap">
+               <div class="document-top">
+                  <span><img src="assets/images/icons/arrow-4.svg" alt="Icons">Eulogy for Chris</span>
+                  <h2 class="title">Eulogy for Chris</h2>
+                  <span class="sub-title">Good morning everyone,</span>
+               </div>
+               <div class="document-desc">
+                  <p>We gather here today not to dwell on sadness, but to celebrate the life of an incredible
+                     person—Chris. To me, Chris wasn’t just a colleague or a friend. He was a constant, a person I could
+                     always count on, and someone who brought lightness and laughter wherever he went.</p>
+                  <p>One of the things that always stood out about Chris was the way he looked out for me, especially at
+                     work. No matter how busy things got, he had a way of making everything seem easier—whether through
+                     a quick bit of advice, a shared laugh, or one of our many inside jokes. Chris had this ability to
+                     turn a stressful moment into something manageable. His presence was always a comfort.</p>
+                  <p>One of our favorite pastimes was going to watch cricket together. Chris was a massive England
+                     cricket fan, and I don’t think I’ll ever forget his excitement whenever his team was playing. His
+                     passion for the game was infectious, and I’ll miss those afternoons, sitting side by side, sharing
+                     commentary and laughs as we cheered for England. Even when they lost, Chris kept the mood
+                     light—usually with one of his quick jokes or loud, booming laughter that made everyone around
+                     smile.</p>
+                  <p>Chris’s personality was larger than life. His sense of humor was sharp, and he had this intensity
+                     that made everything feel more alive. Whether he was cracking a joke or getting passionate about
+                     something he believed in, you couldn’t help but be drawn in by his energy. People loved being
+                     around him because he had a way of making life more fun, more colorful.</p>
+                  <p>Though Chris is no longer with us in person, I believe his spirit will always be a part of our
+                     lives. His laughter, his warmth, and his friendship will never fade. We’ll carry those memories
+                     with us, and in that way, he’ll always be close by.</p>
+               </div>
+               <div class="document-button">
+                  <span>Last edited 1 minute ago</span>
+                  <button class="download-btn" type="submit">Download <img src="assets/images/icons/down.svg"
+                        alt="Icons"></button>
                </div>
             </div>
          </div>
       </section>
       <!-- end: eulogai-group -->
+
    </main>
+   <script>
+      function textAreaAdjust(element) {
+         element.style.height = "1px";
+         element.style.height = 1 + element.scrollHeight + "px";
+      }
+   </script>
 
    <!-- JS here -->
    <script src="assets/js/jquery.min.js"></script>

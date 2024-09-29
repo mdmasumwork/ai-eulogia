@@ -78,6 +78,9 @@
 			// active & show the save button
 			$(this).parents(".chat-anim").find(".save-btn").show(); // Show save button and enable it
 
+			// hide chat icon
+			$(this).parents(".chat-anim").find(".chat_icons").hide();
+
 			// Show the passed with an upward movement
 			$(this).parents(".chat-anim").next().slideDown(300);
 			$(this)
@@ -96,11 +99,11 @@
 				.html('Edit <img src="assets/images/icons/edit.svg">');
 
 			// click: enable the input and value Chris
-			$(this)
-				.parent()
-				.find(".passedName input")
-				.val("Chris")
-				.prop("disabled", false); // Enable the input
+			// $(this)
+			// 	.parent()
+			// 	.find(".passedName input")
+			// 	.val("Chris")
+			// 	.prop("disabled", false); // Enable the input
 			$(this).parent().find(".passedName label").text("Their name");
 
 			// show the save button
@@ -118,6 +121,57 @@
 				.addClass("active");
 
 			centerActiveBlock(); // Center the active block after showing
+		});
+
+		// relation
+		$(".relationBtn").on("click", function () {
+			$(this).hide(); // button hide
+			$(this).parent().find(".relation label").text("Chris was my..");
+
+			// show the save button
+			$(this).parents(".chat-anim").find(".save-btn").show();
+
+			// hide chat icon
+			$(this).parents(".chat-anim").find(".chat_icons").hide();
+
+			// Show the relation with an upward movement
+			$(this).parents(".chat-anim").next().slideDown(300);
+			$(this)
+				.parents(".chat-anim")
+				.removeClass("active")
+				.next()
+				.addClass("active");
+
+			centerActiveBlock(); // Center the active block after showing
+		});
+
+		// confirmation
+		$(".confirmationBtn").on("click", function () {
+			$(this).addClass("edit").html('<img src="assets/images/icons/edit.svg">');
+
+			// show the save button
+			$(this).parents(".chat-anim").find(".save-btn").show();
+
+			// hide chat icon
+			$(this).parents(".chat-anim").find(".chat_icons").hide();
+
+			// Show the relation with an upward movement
+			$(this).parents(".chat-anim").next().slideDown(300);
+			$(this)
+				.parents(".chat-anim")
+				.removeClass("active")
+				.next()
+				.addClass("active");
+
+			centerActiveBlock(); // Center the active block after showing
+		});
+
+		$(".finalBtn").on("click", function () {
+			$(this)
+				.parents(".chat-wrapper")
+				.addClass("finalDocument")
+				.next()
+				.addClass("show");
 		});
 	});
 })(jQuery);

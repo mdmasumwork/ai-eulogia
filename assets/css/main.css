@@ -351,6 +351,8 @@ START: Theme Group CSS
   padding: 0 30px;
   height: 100vh;
   overflow: hidden;
+  position: relative;
+  z-index: 1;
 }
 @media only screen and (min-width: 576px) and (max-width: 767px), (max-width: 575px) {
   .eulogai-section {
@@ -359,21 +361,24 @@ START: Theme Group CSS
 }
 .eulogai-section .chat-wrapper {
   height: 100%;
+  display: block;
+  max-width: 678px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
 }
 .eulogai-section .chat-wrapper .chat-inner {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  max-width: 678px;
+  width: 100%;
+  height: 100%;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
   position: relative;
-  max-width: 678px;
-  width: 100%;
-  margin-left: auto;
-  margin-right: auto;
-  height: 100%;
   -webkit-transition: top 1s ease;
   transition: top 1s ease; /* Adjust the duration and easing as needed */
 }
@@ -399,13 +404,29 @@ START: Theme Group CSS
 }
 
 .document-wrap {
+  position: relative;
+  top: 50%;
+  right: 20px;
   max-width: 680px;
   width: 100%;
-  margin-left: auto;
   background: var(--tj-color-common-white);
   border: 1px solid var(--tj-color-border-2);
   border-radius: 16px;
   padding: 24px 16px;
+  height: calc(100vh - 40px);
+  overflow: auto;
+  -webkit-transform: translate(0, -50%);
+      -ms-transform: translate(0, -50%);
+          transform: translate(0, -50%);
+  -webkit-transition: -webkit-transform 1s ease;
+  transition: -webkit-transform 1s ease;
+  transition: transform 1s ease;
+  transition: transform 1s ease, -webkit-transform 1s ease;
+}
+.document-wrap.show {
+  -webkit-transform: translate(0, -50%);
+      -ms-transform: translate(0, -50%);
+          transform: translate(0, -50%);
 }
 .document-wrap .document-top {
   margin-bottom: 10px;
@@ -471,7 +492,7 @@ START: Theme Group CSS
   margin-top: 16px;
 }
 .chat-anim .chat-content {
-  margin-bottom: 32px;
+  margin-bottom: 16px;
 }
 .chat-anim .chat-content .desc p:first-child {
   margin-bottom: 20px;
@@ -482,26 +503,8 @@ START: Theme Group CSS
 .chat-anim .chat-content .desc ul {
   padding-left: 30px;
 }
-.chat-anim .chat-content .chat-list {
-  margin-bottom: 20px;
-  padding-left: 30px;
-}
-.chat-anim .chat-content .chat-list ul {
-  margin: 0;
-  padding: 0;
-}
-.chat-anim textarea {
-  width: 100%;
-  min-height: 110px;
-  border: none;
-  resize: none;
-  font-size: 16px;
-  font-family: var(--tj-ff-body);
-  color: var(--tj-color-common-black);
-  line-height: 1.7;
-}
-.chat-anim textarea:focus {
-  outline: none;
+.chat-anim .chat-content .desc ul li::marker {
+  font-size: 10px;
 }
 .chat-anim .document-btn {
   max-width: 330px;
@@ -510,7 +513,7 @@ START: Theme Group CSS
   border: 1px solid var(--tj-color-border-2);
   border-radius: 16px;
   padding: 31px 16px;
-  margin-top: 32px;
+  margin-top: 16px;
 }
 .chat-anim .document-btn .title {
   display: -webkit-box;
@@ -538,13 +541,15 @@ START: Theme Group CSS
   max-width: 11px;
   width: 100%;
 }
-.chat-anim.what-i-do {
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
 .chat-anim.what-i-do .sec_title {
+  max-width: 500px;
+  width: 100%;
   text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+.chat-anim.what-i-do .sec_title .title {
+  font-size: 40px;
 }
 .chat-anim.what-i-do .cart-inner {
   display: -webkit-box;
@@ -560,33 +565,7 @@ START: Theme Group CSS
           justify-content: center;
   gap: 20px;
 }
-
-.cart_box {
-  padding-top: 161px;
-  padding-bottom: 16px;
-}
-.cart_box .sec_title {
-  max-width: 500px;
-  width: 100%;
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center;
-}
-.cart_box .sec_title .title {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  gap: 8px;
-  font-size: 40px;
-}
-.cart_box .sec_title .title img {
-  max-width: 47px;
-  width: 100%;
-}
-.cart_box .cart-inner {
+.chat-anim.story .cart-inner {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -595,11 +574,44 @@ START: Theme Group CSS
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-column-gap: 20px;
-     -moz-column-gap: 20px;
-          column-gap: 20px;
-  row-gap: 20px;
-  margin-bottom: 24px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 20px;
+  margin-top: 16px;
+}
+.chat-anim.confirmation .sec_title {
+  margin-bottom: 0;
+}
+.chat-anim.confirmation .sec_title .title {
+  margin-bottom: 0;
+}
+.chat-anim.confirmation .confirmationBtn {
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+.sec_title .title {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 8px;
+  font-size: 32px;
+  line-height: 1.1;
+  margin: 0;
+}
+.sec_title .title img {
+  max-width: 47px;
+  width: 100%;
+}
+.sec_title .title .desc {
+  display: block;
+  margin-top: 16px;
 }
 
 .cart-anim .desc {
@@ -613,44 +625,6 @@ START: Theme Group CSS
 }
 .cart-anim .form-group .form_input {
   margin-bottom: 0;
-}
-.cart-anim .cart-style-2 {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  flex-wrap: wrap;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-column-gap: 20px;
-     -moz-column-gap: 20px;
-          column-gap: 20px;
-  row-gap: 20px;
-}
-.cart-anim .cart-style-2 .cart-item .desc {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  gap: 8px;
-  font-size: 14px;
-  color: var(--tj-color-common-black);
-  line-height: 1.7;
-  margin-bottom: 0;
-}
-.cart-anim .cart-style-2 .cart-item.active {
-  background: var(--tj-color-theme-primary);
-}
-.cart-anim .cart-style-2 .cart-item.active .desc {
-  color: var(--tj-color-common-white);
-}
-.cart-anim .cart-style-2 .cart-item.active .img-1 {
-  -webkit-filter: brightness(0) invert(1);
-          filter: brightness(0) invert(1);
 }
 
 .cart-item {
@@ -693,10 +667,39 @@ START: Theme Group CSS
   color: var(--tj-color-common-black);
   font-family: var(--tj-ff-body);
 }
+.cart-item.style-2 .title {
+  margin: 0;
+}
+.cart-item.style-2 .desc {
+  margin-top: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: var(--tj-color-common-black);
+  line-height: 1.7;
+  text-align: left;
+  font-family: var(--tj-ff-body);
+}
+.cart-item.style-2 .desc p {
+  margin: 0;
+  width: calc(100% - 22px);
+}
+.cart-item.style-2 .desc img {
+  -webkit-filter: brightness(0) invert(1);
+          filter: brightness(0) invert(1);
+}
 .cart-item.active {
   background: var(--tj-color-theme-primary);
 }
 .cart-item.active .title {
+  color: var(--tj-color-common-white);
+}
+.cart-item.active .desc {
   color: var(--tj-color-common-white);
 }
 .cart-item.active .cart-btn {
@@ -758,7 +761,8 @@ label {
 .form_input {
   width: 100%;
 }
-.form_input input {
+.form_input input,
+.form_input textarea {
   font-size: 16px;
   font-family: var(--tj-ff-body);
   color: var(--tj-color-common-black);
@@ -768,28 +772,42 @@ label {
   padding-right: 125px;
   background-color: transparent;
 }
-.form_input input::-ms-input-placeholder {
+.form_input input::-ms-input-placeholder,
+.form_input textarea::-ms-input-placeholder {
   color: var(--tj-color-common-black);
   font-size: 16px;
 }
-.form_input input::-webkit-input-placeholder {
+.form_input input::-webkit-input-placeholder, .form_input textarea::-webkit-input-placeholder {
   color: var(--tj-color-common-black);
   font-size: 16px;
 }
-.form_input input::-moz-placeholder {
+.form_input input::-moz-placeholder, .form_input textarea::-moz-placeholder {
   color: var(--tj-color-common-black);
   font-size: 16px;
 }
-.form_input input:-ms-input-placeholder {
+.form_input input:-ms-input-placeholder, .form_input textarea:-ms-input-placeholder {
   color: var(--tj-color-common-black);
   font-size: 16px;
 }
-.form_input input::placeholder {
+.form_input input::-ms-input-placeholder, .form_input textarea::-ms-input-placeholder {
   color: var(--tj-color-common-black);
   font-size: 16px;
 }
-.form_input input:focus {
+.form_input input::placeholder,
+.form_input textarea::placeholder {
+  color: var(--tj-color-common-black);
+  font-size: 16px;
+}
+.form_input input:focus, .form_input input:focus-visible,
+.form_input textarea:focus,
+.form_input textarea:focus-visible {
   outline: none;
+  -webkit-box-shadow: 0 0 0;
+          box-shadow: 0 0 0;
+}
+.form_input textarea {
+  min-height: 20px;
+  resize: none;
 }
 
 /* !END: Theme Form CSS *//*# sourceMappingURL=main.css.map */
