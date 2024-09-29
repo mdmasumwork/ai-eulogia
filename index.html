@@ -24,6 +24,7 @@
       <section class="eulogai-section">
          <div class="chat-wrapper">
             <div class="chat-inner">
+
                <div class="chat-anim intro">
                   <div class="sec_title">
                      <h1 class="title">Hello, I’m Eulogai</h1>
@@ -34,28 +35,28 @@
                      </div>
                   </div>
                   <div class="form-group">
-                     <button class="anim-btn" type="submit">Send <img src="assets/images/icons/arrow-1.svg"
+                     <button class="anim-btn introBtn" type="submit">Send <img src="assets/images/icons/arrow-1.svg"
                            alt="Icons"></button>
 
-                     <div class="form_input">
-                        <label for="name">Nice to meet you, I’m...</label>
-                        <input type="text" name="name" id="name" placeholder="Enter your full name" disabled>
+                     <div class="form_input firstName">
+                        <label for="firstName">Nice to meet you, I’m...</label>
+                        <input type="text" name="firstName" id="firstName" placeholder="Enter your full name" disabled>
                      </div>
 
-                     <div class="form_input" style="display: none;">
-                        <label for="nameThree">But please call me</label>
-                        <input type="text" name="nameThree" id="nameThree" placeholder="sar name" value="Albert">
+                     <div class="form_input lastName" style="display: none;">
+                        <label for="lastName">But please call me</label>
+                        <input type="text" name="lastName" id="lastName" placeholder="Last name" value="Albert">
                      </div>
                   </div>
 
                   <button class="save-btn" type="submit" style="display: none;" disabled>
                      Saved <img src="assets/images/icons/icons-1.svg" alt="Icons">
                   </button>
-                  <div class="chat_icons">
-                     <img src="assets/images/icons/sec_icons.png" alt="Icons">
-                  </div>
+
+                  <img class="chat_icons" src="assets/images/icons/sec_icons.png" alt="Icons">
                </div>
-               <div class="chat-anim quick_note ">
+
+               <div class="chat-anim quick_note " style="display: none;">
                   <div class="sec_title">
                      <h1 class="title">Just a quick note</h1>
                      <div class="desc">
@@ -64,9 +65,114 @@
                            personalizing the output to ensure it reflects your unique memories and emotions.</p>
                      </div>
                   </div>
-                  <button class="anim-btn" type="submit">
+                  <button class="anim-btn quick_note_btn" type="submit">
                      Makes sense, let’s begin<img src="assets/images/icons/arrow-2.svg" alt="Icons">
                   </button>
+
+                  <img class="chat_icons" src="assets/images/icons/sec_icons.png" alt="Icons">
+               </div>
+
+               <div class="chat-anim what-i-do" style="display: none;">
+                  <div class="sec_title">
+                     <h1 class="title">
+                        <img src="assets/images/icons/sec_icons.png" alt="Icons">
+                        Good afternoon, Albert
+                     </h1>
+                     <div class="desc">
+                        <p>How can I help you today?</p>
+                     </div>
+                  </div>
+                  <div class="cart-inner">
+                     <button class="cart-item">
+                        <h5 class="title">
+                           <img src="assets/images/icons/cart-1.svg" alt="Icons">
+                           I’d like to write a condolence card
+                        </h5>
+                        <span class="cart-btn" type="submit">
+                           Condolence card
+                           <img src="assets/images/icons/arrow-3.svg" alt="Icons">
+                        </span>
+                     </button>
+                     <button class="cart-item">
+                        <h5 class="title">
+                           <img src="assets/images/icons/elugy.svg" alt="Icons">
+                           I’d like to write a
+                           eulogy
+                        </h5>
+                        <span class="cart-btn" type="submit">
+                           Eulogy
+                           <img src="assets/images/icons/arrow-3.svg" alt="Icons">
+                        </span>
+                     </button>
+                     <button class="cart-item">
+                        <h5 class="title">
+                           <img src="assets/images/icons/cart-1.svg" alt="Icons">
+                           I’d like to write a
+                           condolence card
+                        </h5>
+                        <span class="cart-btn" type="submit">
+                           Condolence card
+                           <img src="assets/images/icons/arrow-3.svg" alt="Icons">
+                        </span>
+                     </button>
+                     <button class="cart-item">
+                        <h5 class="title">
+                           <img src="assets/images/icons/elugy.svg" alt="Icons">
+                           I’d like to write a
+                           eulogy
+                        </h5>
+                        <span class="cart-btn" type="submit">
+                           Eulogy
+                           <img src="assets/images/icons/arrow-3.svg" alt="Icons">
+                        </span>
+                     </button>
+                  </div>
+
+                  <button class="save-btn" type="submit" style="display: none;" disabled>
+                     Saved <img src="assets/images/icons/icons-1.svg" alt="Icons">
+                  </button>
+               </div>
+
+               <div class="chat-anim passed" style="display: none;">
+                  <div class="desc">
+                     <p>I’m sorry for your loss, and I’d be honored to help you write a meaningful eulogy. To make
+                        it personal and heartfelt, could you tell me a little more about the person who has
+                        passed?</p>
+                  </div>
+
+                  <div class="form-group">
+                     <button class="anim-btn passedBtn" type="submit">
+                        Send
+                        <img src="assets/images/icons/arrow-1.svg" alt="arrowIcon">
+                     </button>
+                     <div class="form_input passedName">
+                        <label for="passedName">Of course...</label>
+                        <input type="text" name="passedName" id="passedName" placeholder="Their full name" value=""
+                           disabled>
+                     </div>
+                  </div>
+
+                  <img class="chat_icons" src="assets/images/icons/sec_icons.png" alt="Icons">
+
+                  <button class="save-btn" type="submit" style="display: none;" disabled>
+                     Saved <img src="assets/images/icons/icons-1.svg" alt="Icons">
+                  </button>
+               </div>
+
+               <div class="chat-anim relation" style="display: none;">
+                  <div class="desc">
+                     <p>Thank you, and what was your relationship to Chris?</p>
+                  </div>
+                  <div class="form-group">
+                     <button class="anim-btn" type="submit">Send <img src="assets/images/icons/arrow-1.svg"
+                           alt="Icons"></button>
+                     <div class="form_input">
+                        <label for="nameSix">Sure thing,</label>
+                        <input type="text" name="nameSix" id="nameSix" placeholder="Chris was my.." required="">
+                     </div>
+                  </div>
+
+                  <img class="chat_icons" src="assets/images/icons/sec_icons.png" alt="Icons">
                </div>
             </div>
          </div>

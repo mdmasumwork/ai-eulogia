@@ -278,11 +278,27 @@ img {
   padding: 14px 24px;
   line-height: 1;
 }
-.anim-btn.style-2 {
+.anim-btn .arrow {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+.anim-btn .edit {
+  display: none;
+}
+.anim-btn.edit {
   font-size: 16px;
   font-weight: var(--tj-fw-medium);
   background: var(--tj-color-theme-bg-2);
   color: var(--tj-color-heading-primary);
+}
+.anim-btn.edit .arrow {
+  display: none;
+}
+.anim-btn.edit .edit {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
 }
 
 .save-btn {
@@ -358,6 +374,12 @@ START: Theme Group CSS
   margin-left: auto;
   margin-right: auto;
   height: 100%;
+  -webkit-transition: top 1s ease;
+  transition: top 1s ease; /* Adjust the duration and easing as needed */
+}
+.eulogai-section .chat-wrapper .chat-inner .chat_icons {
+  max-width: 28px;
+  width: 100%;
 }
 .eulogai-section .chat-wrapper .chat-inner .intro {
   opacity: 0;
@@ -448,10 +470,6 @@ START: Theme Group CSS
 .chat-anim .quick_note {
   margin-top: 16px;
 }
-.chat-anim .chat_icons {
-  max-width: 28px;
-  width: 100%;
-}
 .chat-anim .chat-content {
   margin-bottom: 32px;
 }
@@ -519,6 +537,28 @@ START: Theme Group CSS
 .chat-anim .document-btn span img {
   max-width: 11px;
   width: 100%;
+}
+.chat-anim.what-i-do {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.chat-anim.what-i-do .sec_title {
+  text-align: center;
+}
+.chat-anim.what-i-do .cart-inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 20px;
 }
 
 .cart_box {
@@ -620,6 +660,12 @@ START: Theme Group CSS
   border: 1px solid var(--tj-color-border-2);
   border-radius: 16px;
   padding: 24px 16px;
+  color: inherit;
+}
+.cart-item:focus, .cart-item:focus-visible {
+  outline: none;
+  -webkit-box-shadow: 0 0 0;
+          box-shadow: 0 0 0;
 }
 .cart-item .title {
   display: -webkit-box;
@@ -712,7 +758,7 @@ label {
 .form_input {
   width: 100%;
 }
-.form_input input[type=text] {
+.form_input input {
   font-size: 16px;
   font-family: var(--tj-ff-body);
   color: var(--tj-color-common-black);
@@ -722,27 +768,27 @@ label {
   padding-right: 125px;
   background-color: transparent;
 }
-.form_input input[type=text]::-ms-input-placeholder {
+.form_input input::-ms-input-placeholder {
   color: var(--tj-color-common-black);
   font-size: 16px;
 }
-.form_input input[type=text]::-webkit-input-placeholder {
+.form_input input::-webkit-input-placeholder {
   color: var(--tj-color-common-black);
   font-size: 16px;
 }
-.form_input input[type=text]::-moz-placeholder {
+.form_input input::-moz-placeholder {
   color: var(--tj-color-common-black);
   font-size: 16px;
 }
-.form_input input[type=text]:-ms-input-placeholder {
+.form_input input:-ms-input-placeholder {
   color: var(--tj-color-common-black);
   font-size: 16px;
 }
-.form_input input[type=text]::placeholder {
+.form_input input::placeholder {
   color: var(--tj-color-common-black);
   font-size: 16px;
 }
-.form_input input[type=text]:focus {
+.form_input input:focus {
   outline: none;
 }
 
