@@ -10,30 +10,28 @@ START: Theme Group CSS
 	position: relative;
 	z-index: 1;
 
-	@media #{$sm, $xs} {
-		padding: 0 20px;
-	}
-
 	.chat-wrapper {
 		height: 100%;
 		display: block;
-		max-width: 678px;
 		width: 100%;
-		margin-left: auto;
-		margin-right: auto;
+
+		&.finalDocument {
+			.chat-inner {
+				transform: translateX(-110px);
+			}
+		}
 
 		.chat-inner {
 			max-width: 678px;
 			width: 100%;
 			height: 100%;
-			display: inline-flex;
+			margin-left: auto;
+			margin-right: auto;
+			display: flex;
 			flex-direction: column;
 			position: relative;
-			transition: top 1s ease; /* Adjust the duration and easing as needed */
-
-			// position: relative;
-			// z-index: 1;
-			// height: 100%;
+			transition: top 1s ease, transform 1s ease; /* Adjust the duration and easing as needed */
+			gap: 32px;
 
 			.chat_icons {
 				max-width: 28px;
@@ -51,10 +49,67 @@ START: Theme Group CSS
 			}
 		}
 	}
+	@media #{$xxxxl} {
+		.chat-wrapper {
+			&.finalDocument {
+				.chat-inner {
+					transform: translateX(-170px);
+				}
+			}
+			.document-wrap {
+				max-width: 650px;
+			}
+		}
+	}
+	@media #{$xxxl} {
+		.chat-wrapper {
+			&.finalDocument {
+				.chat-inner {
+					transform: translateX(-170px);
+				}
+			}
+			.document-wrap {
+				max-width: 590px;
+			}
+		}
+	}
+	@media #{$xxl} {
+		.chat-wrapper {
+			&.finalDocument {
+				.chat-inner {
+					transform: translateX(-220px);
+				}
+			}
+			.chat-inner {
+				max-width: 580px;
+			}
+			.document-wrap {
+				max-width: 590px;
+			}
+		}
+	}
+	@media #{$xl} {
+		.chat-wrapper {
+			&.finalDocument {
+				.chat-inner {
+					transform: translateX(-285px);
+				}
+			}
+			.chat-inner {
+				max-width: 580px;
+			}
+			.document-wrap {
+				max-width: 560px;
+			}
+		}
+	}
+	@media #{$sm, $xs} {
+		padding: 0 20px;
+	}
 }
 
 .document-wrap {
-	position: relative;
+	position: fixed;
 	top: 50%;
 	right: 20px;
 	max-width: 680px;
@@ -62,32 +117,42 @@ START: Theme Group CSS
 	background: var(--tj-color-common-white);
 	border: 1px solid var(--tj-color-border-2);
 	border-radius: 16px;
-	padding: 24px 16px;
+	padding: 120px 16px 70px 16px;
 	height: calc(100vh - 40px);
-	overflow: auto;
-	transform: translate(0, -50%);
+	overflow: hidden;
+	transform: translate(110%, -50%);
 	transition: transform 1s ease;
+	z-index: 3;
 
 	&.show {
 		transform: translate(0, -50%);
 	}
 
+	.close_document {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		width: 20px;
+		height: 20px;
+		position: absolute;
+		top: 24px;
+		right: 16px;
+		z-index: 4;
+	}
+
 	.document-top {
-		margin-bottom: 10px;
-		span {
-			display: flex;
-			align-items: center;
-			gap: 8px;
-		}
-		.title {
-			margin-bottom: 10px;
-		}
-		.sub-title {
-			font-size: 14px;
-			color: var(--tj-color-common-black);
-		}
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		padding: 24px 16px 10px 16px;
 	}
 	.document-desc {
+		overflow: auto;
+		height: 100%;
+		padding-right: 25px;
+		scrollbar-color: #e0edf9 var(--tj-color-common-white);
+
 		p {
 			margin-bottom: 25px;
 			&:last-child {
@@ -96,14 +161,22 @@ START: Theme Group CSS
 		}
 	}
 	.document-button {
+		background-color: var(--tj-color-common-white);
+		position: fixed;
+		left: 0;
+		bottom: 0;
+		width: 100%;
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
-		margin-top: 10px;
+		gap: 15px;
+		padding: 16px;
+
 		span {
-			display: block;
+			display: inline-block;
 			color: var(--tj-color-grey-1);
 			font-size: 12px;
+			line-height: 1;
 		}
 	}
 }
@@ -261,6 +334,8 @@ START: Theme Group CSS
 	border-radius: 16px;
 	padding: 24px 16px;
 	color: inherit;
+	text-align: left;
+
 	&:focus,
 	&:focus-visible {
 		outline: none;
@@ -270,11 +345,12 @@ START: Theme Group CSS
 	.title {
 		display: flex;
 		gap: 8px;
-		align-items: center;
+		align-items: start;
 		margin-bottom: 10px;
 		img {
 			max-width: 26px;
 			width: 100%;
+			margin-top: -4px;
 		}
 	}
 	.cart-btn {
@@ -324,6 +400,16 @@ START: Theme Group CSS
 			color: var(--tj-color-common-white);
 			img {
 				filter: brightness(0) invert(1);
+			}
+		}
+	}
+
+	@media #{$xxl, $xl} {
+		max-width: 280px;
+
+		&.style-2 {
+			.title {
+				font-size: 18px;
 			}
 		}
 	}

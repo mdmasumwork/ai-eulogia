@@ -166,12 +166,19 @@
 			centerActiveBlock(); // Center the active block after showing
 		});
 
+		// final document
 		$(".finalBtn").on("click", function () {
 			$(this)
 				.parents(".chat-wrapper")
 				.addClass("finalDocument")
-				.next()
+				.find(".document-wrap")
 				.addClass("show");
+		});
+
+		// close document
+		$(".close_document").on("click", function () {
+			$(this).parent().removeClass("show");
+			$(this).parents(".chat-wrapper").removeClass("finalDocument");
 		});
 	});
 })(jQuery);

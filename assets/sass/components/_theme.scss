@@ -1,6 +1,5 @@
 @use "../utilities" as *;
 
-
 /**----------------------------------------
 START: Theme Default CSS
 ----------------------------------------*/
@@ -132,10 +131,13 @@ button:focus:not(:focus-visible) {
 	text-transform: capitalize;
 }
 
+* {
+	scrollbar-width: thin;
+	scrollbar-color: var(--tj-color-theme-primary) var(--tj-color-grey-2);
+}
 ::-webkit-scrollbar {
 	height: 4px;
-	width: 4px;
-	background: transparent;
+	width: 6px;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -143,7 +145,6 @@ button:focus:not(:focus-visible) {
 	-webkit-border-radius: 1ex;
 	-webkit-box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.75);
 }
-
 ::-webkit-scrollbar-corner {
 	background: transparent;
 }
