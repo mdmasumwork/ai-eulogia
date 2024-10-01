@@ -146,6 +146,17 @@ START: Theme Group CSS
 		left: 0;
 		width: 100%;
 		padding: 24px 16px 10px 16px;
+
+		> span {
+			display: flex;
+			flex-wrap: wrap;
+			align-items: center;
+			gap: 8px;
+			line-height: 1;
+		}
+		.title {
+			margin: 10px 0;
+		}
 	}
 	.document-desc {
 		overflow: auto;
