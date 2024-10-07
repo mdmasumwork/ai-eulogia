@@ -33,11 +33,6 @@
 
 			if (clickCount === 1) {
 				// First click: enable the first input and show the second input
-				$(this)
-					.parent()
-					.find(".firstName input")
-					.val("Albert Parker")
-					.prop("disabled", false); // Enable the input
 				$(this).parent().find(".lastName").slideDown(300); // Slide down the second input
 			} else if (clickCount === 2) {
 				// Second click: show the save button

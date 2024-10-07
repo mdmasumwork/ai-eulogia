@@ -40,13 +40,13 @@
                            alt="Icons"></button>
 
                      <div class="form_input firstName">
-                        <label for="firstName">Nice to meet you, I’m...</label>
-                        <input type="text" name="firstName" id="firstName" placeholder="Enter your full name" disabled>
+                        <label for="fullName">Nice to meet you, I’m...</label>
+                        <input type="text" name="fullName" id="fullName" placeholder="Enter your full name">
                      </div>
 
                      <div class="form_input lastName" style="display: none;">
-                        <label for="lastName">But please call me</label>
-                        <input type="text" name="lastName" id="lastName" placeholder="Last name" value="Albert">
+                        <label for="nickName">But please call me</label>
+                        <input type="text" name="nickName" id="nickName" placeholder="Nickname" value="">
                      </div>
                   </div>
 
@@ -79,14 +79,14 @@
                   <div class="sec_title">
                      <h1 class="title">
                         <img src="assets/images/icons/sec_icons.png" alt="Icons">
-                        Good afternoon, Albert
+                        Good afternoon, <span class="username">Albert</span>
                      </h1>
                      <div class="desc">
                         <p>How can I help you today?</p>
                      </div>
                   </div>
                   <div class="cart-inner">
-                     <button class="cart-item">
+                     <button class="cart-item content-type" data-type="condolence">
                         <h5 class="title">
                            <img src="assets/images/icons/cart-1.svg" alt="Icons">
                            I’d like to write a condolence card
@@ -96,36 +96,33 @@
                            <img src="assets/images/icons/arrow-3.svg" alt="Icons">
                         </span>
                      </button>
-                     <button class="cart-item">
+                     <button class="cart-item content-type" data-type="eulogy">
                         <h5 class="title">
                            <img src="assets/images/icons/elugy.svg" alt="Icons">
-                           I’d like to write a
-                           eulogy
+                           I’d like to write a eulogy
                         </h5>
                         <span class="cart-btn" type="submit">
                            Eulogy
                            <img src="assets/images/icons/arrow-3.svg" alt="Icons">
                         </span>
                      </button>
-                     <button class="cart-item">
+                     <button class="cart-item content-type" data-type="obituary">
                         <h5 class="title">
                            <img src="assets/images/icons/cart-1.svg" alt="Icons">
-                           I’d like to write a
-                           condolence card
+                           I’d like to write an obituary
                         </h5>
                         <span class="cart-btn" type="submit">
-                           Condolence card
+                           Obituary
                            <img src="assets/images/icons/arrow-3.svg" alt="Icons">
                         </span>
                      </button>
-                     <button class="cart-item">
+                     <button class="cart-item content-type" data-type="funeral">
                         <h5 class="title">
                            <img src="assets/images/icons/elugy.svg" alt="Icons">
-                           I’d like to write a
-                           eulogy
+                           I’d like to write a funeral program
                         </h5>
                         <span class="cart-btn" type="submit">
-                           Eulogy
+                           Funeral program
                            <img src="assets/images/icons/arrow-3.svg" alt="Icons">
                         </span>
                      </button>
@@ -139,7 +136,7 @@
                <!-- passed -->
                <div class="chat-anim passed" style="display: none;">
                   <div class="desc">
-                     <p>I’m sorry for your loss, and I’d be honored to help you write a meaningful eulogy. To make
+                     <p>I’m sorry for your loss, and I’d be honored to help you write a meaningful <span class="content-type-text">eulogy</span> To make
                         it personal and heartfelt, could you tell me a little more about the person who has
                         passed?</p>
                   </div>
@@ -165,14 +162,14 @@
                <!-- relationship -->
                <div class="chat-anim relation" style="display: none;">
                   <div class="desc">
-                     <p>Thank you, and what was your relationship to Chris?</p>
+                     <p>Thank you, and what was your relationship to <span class="dead-person">Chris</span>?</p>
                   </div>
                   <div class="form-group relation">
                      <button class="anim-btn relationBtn" type="submit">Send <img src="assets/images/icons/arrow-1.svg"
                            alt="Icons"></button>
                      <div class="form_input relation">
                         <label for="relation">Sure thing,</label>
-                        <input type="text" name="relation" id="realtion" placeholder="Chris was my.." value="">
+                        <input type="text" name="relation" id="relation" placeholder="The person was my.." value="">
                      </div>
                   </div>
 
@@ -186,13 +183,13 @@
                <!-- story -->
                <div class="chat-anim story" style="display: none;">
                   <div class="desc">
-                     <p>Thank you for sharing that, and I'm truly sorry for the loss of your close friend, Chris.
+                     <p>Thank you for sharing that, and I'm truly sorry for the loss of your close friend, <span class="dead-person">Chris</span>.
                         To help me write something that truly honours him, could you tell me the tone of voice
                         that would that would be best?</p>
                   </div>
 
                   <div class="cart-inner">
-                     <button class="cart-item style-2">
+                     <button class="cart-item style-2 content-tone" data-tone="warm">
                         <h3 class="title">
                            <img src="assets/images/icons/warm.svg" alt="Icons">
                            Warm & Compassionate
@@ -202,7 +199,7 @@
                            <img class="arrow" src="assets/images/icons/arrow-3.svg" alt="Icons">
                         </div>
                      </button>
-                     <button class="cart-item style-2">
+                     <button class="cart-item style-2 content-tone" data-tone="formal">
                         <h3 class="title">
                            <img src="assets/images/icons/formal.svg" alt="Icons">
                            Formal & Respectful
@@ -212,7 +209,7 @@
                            <img class="arrow" src="assets/images/icons/arrow-3.svg" alt="Icons">
                         </div>
                      </button>
-                     <button class="cart-item style-2">
+                     <button class="cart-item style-2 content-tone" data-tone="poetic">
                         <h3 class="title">
                            <img src="assets/images/icons/poetic.svg" alt="Icons">
                            Poetic & Reflective
@@ -222,7 +219,7 @@
                            <img class="arrow" src="assets/images/icons/arrow-3.svg" alt="Icons">
                         </div>
                      </button>
-                     <button class="cart-item style-2">
+                     <button class="cart-item style-2 content-tone" data-tone="optimistic">
                         <h3 class="title">
                            <img src="assets/images/icons/optimistic.svg" alt="Icons">
                            Optimistic & Uplifting
@@ -248,7 +245,7 @@
                   </div>
                   <div class="chat-content">
                      <div class="desc">
-                        <p>To help me write something meaningful, could you please tell me a bit more about Chris?</p>
+                        <p>To help me write something meaningful, could you please tell me a bit more about <span class="dead-person">Chris</span>?</p>
                         <p>Some things you might consider sharing are:</p>
                         <ul>
                            <li>What made him a great friend to you?</li>
@@ -256,13 +253,13 @@
                               him?</li>
                            <li>How would you describe his personality or the way he impacted those around him?</li>
                         </ul>
-                        <p>These details will help me create a eulogy that feels deeply personal and heartfelt. Take you
+                        <p>These details will help me create a <span class="content-type-text">eulogy</span> that feels deeply personal and heartfelt. Take you
                            time.</p>
                      </div>
                   </div>
 
                   <div class="form-group confirmation">
-                     <button class="anim-btn confirmationBtn" type="submit">Send <img
+                     <button id="generate-content-button" class="anim-btn confirmationBtn" type="submit">Send <img
                            src="assets/images/icons/arrow-1.svg" alt="Icons"></button>
                      <div class="form_input ">
                         <textarea name="confirmation" id="confirmation" onkeyup="textAreaAdjust(this)"
@@ -280,12 +277,12 @@
                <!-- sharing -->
                <div class="chat-anim sharing" style="display: none;">
                   <div class="desc">
-                     <p>Thank you for sharing those beautiful details about Chris. Here's an uplifting and optimistic
-                        eulogy that reflects the friendship you shared and his vibrant personality:</p>
+                     <p>Thank you for sharing those beautiful details about <span class="dead-person">Chris</span>. Here's an uplifting and optimistic
+                        <span class="content-type-text">eulogy</span> that reflects the friendship you shared and his vibrant personality:</p>
                   </div>
 
                   <button class="document-btn finalBtn">
-                     <h3 class="title"><img src="assets/images/icons/document.svg" alt="Icons">Eulogy for Chris</h3>
+                     <h3 class="title"><img src="assets/images/icons/document.svg" alt="Icons"><span class="content-type-text">Eulogy</span> for <span class="dead-person">Chris</span></h3>
                      <span>Click to open document <img src="assets/images/icons/arrow-3.svg" alt="Icons"></span>
                   </button>
 
@@ -298,11 +295,11 @@
                <button class="close_document"><img src="./assets/images/icons/cross.svg" alt=""></button>
 
                <div class="document-top">
-                  <span><img src="assets/images/icons/arrow-4.svg" alt="Icons">Eulogy for Chris</span>
-                  <h2 class="title">Eulogy for Chris</h2>
+                  <span><img src="assets/images/icons/arrow-4.svg" alt="Icons"><span class="content-type-text">Eulogy</span> for <span class="dead-person">Chris</span></span>
+                  <h2 class="title"><span class="content-type-text">Eulogy</span> for <span class="dead-person">Chris</span></h2>
                   <span class="sub-title">Good morning everyone,</span>
                </div>
-               <div class="document-desc">
+               <div id="generated-content" class="document-desc">
                   <p>We gather here today not to dwell on sadness, but to celebrate the life of an incredible
                      person—Chris. To me, Chris wasn’t just a colleague or a friend. He was a constant, a person I could
                      always count on, and someone who brought lightness and laughter wherever he went.</p>
@@ -345,6 +342,7 @@
    <!-- JS here -->
    <script src="assets/js/jquery.min.js"></script>
    <script src="assets/js/main.js"></script>
+   <script src="assets/js/gpt.connector.js"></script>
 </body>
 
 </html>
